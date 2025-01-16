@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+  {% block title %}Ajouter Produit{% endblock %}
+    {% block content %}
+   
+   <form action="/store" method="post">
+        Nom Du Produit : <input type="text" name ="name" required>
+        <br>
+         Category : <input type="text" name ="category" >
+        <br>
+         Production Date : <input type="date" name ="production_date" required>
+        <br>
+         Expiration Date : <input type="date" name ="expiration_date" required>
+        <br>
+        <input type="submit" value ="Valider">
+   </form>
+        {% endblock %}

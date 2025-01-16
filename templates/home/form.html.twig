@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+  {% block title %}Ajouter Admin{% endblock %}
+    {% block content %}
+   
+   <form action="/adminAjout" method="post">
+        Nom Du Admin : <input type="text" name ="nom" required>
+        <br>
+         Email : <input type="email" name ="email" >
+        <br>
+        Password <input type="password" name ="password" required>
+        <br>
+        <input type="submit" value ="Valider">
+   </form>
+        {% endblock %}

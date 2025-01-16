@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+  {% block title %}Modifier Produit {{product.id}} {% endblock %}
+    {% block content %}
+   
+   <form action="/update" method="post">
+        <input type="hidden"  name="id" value="{{ product.id }}" required>
+        Nom Du Produit : <input type="text" name ="name" value="{{product.name}}" required>
+        <br>
+         Category : <input type="text" value="{{product.category}}" name ="category" >
+        <br>
+       <input type="date" value="{{ product.productionDate|date('Y-m-d') }}" name="production_date" required>
+       <br>
+        <input type="date" value="{{ product.expirationDate|date('Y-m-d') }}" name="expiration_date" required>
+
+        <br>
+        <input type="submit" value ="Update">
+   </form>
+        {% endblock %}

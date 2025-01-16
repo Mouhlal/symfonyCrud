@@ -1,5 +1,43 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+    resource: ../src/Controller/
     type: attribute
+
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+
+add:
+    path: /add
+    controller: App\Controller\HomeController::add
+
+store:
+    path: /store
+    controller: App\Controller\HomeController::store
+delete: 
+    path: /delete/{id}
+    controller: App\Controller\HomeController::delete
+edit: 
+    path: /edit/{id}
+    controller: App\Controller\HomeController::edit
+update:
+    path: /update
+    controller: App\Controller\HomeController::update
+search: 
+    path: /search
+    controller: App\Controller\HomeController::search 
+
+form: 
+    path: /admin
+    controller: App\Controller\HomeController::form
+admin: 
+    path: /adminAjout
+    controller: App\Controller\HomeController::admin 
+users: 
+    path: /users
+    controller: App\Controller\HomeController::users
+ed: 
+    path: /ed/{id}
+    controller: App\Controller\HomeController::ed
+up:
+    path: /up
+    controller: App\Controller\HomeController::up

@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+  {% block title %}Modifier Admin {{product.id}} {% endblock %}
+    {% block content %}
+   
+   <form action="/up" method="post">
+        <input type="hidden"  name="id" value="{{ product.id }}" required>
+        Nom  <input type="text" name ="nom" value="{{product.nom}}" required>
+        <br>
+         Email : <input type="text" value="{{product.email}}" name ="email" >
+            <br>
+            Password
+        <input type="password" value="{{ product.password}}" name="password" required>
+
+        <br>
+        <input type="submit" value ="Update">
+   </form>
+        {% endblock %}

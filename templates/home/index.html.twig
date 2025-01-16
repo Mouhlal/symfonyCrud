@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% block content %}
+{% for label, messages in app.flashes %}
+    <div class="alert alert-{{ label }}">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">category</th>
+      <th scope="col">Production Date</th>
+      <th scope="col">Expiration Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for product in product %}
+    <tr>
+      <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.productionDate|date('Y-m-d') }}</td>
+        <td>{{ product.expirationDate|date('Y-m-d') }}</td>
+        <td>
+          <a href="/edit/{{ product.id }}" class="btn btn-primary">Edit</a>
+          <a href="/delete/{{ product.id }}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+            {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
+

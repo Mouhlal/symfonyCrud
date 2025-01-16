@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block content %}
+
+<h1>Search Results</h1>
+
+
+
+{% if products is not empty %}
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - Category: {{ product.category }}
+                <br>Production Date: {{ product.productionDate|date('Y-m-d') }}
+                <br>Expiration Date: {{ product.expirationDate|date('Y-m-d') }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products found for your search.</p>
+{% endif %}
+{% endblock %}
